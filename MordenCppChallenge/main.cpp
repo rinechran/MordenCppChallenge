@@ -4,13 +4,14 @@
 #include <string>
 #include <functional>
 #include <iostream>
-#include "Problems/ch1/One.h"
+#include "Problems/Math/Math.h"
 
 
 int main() {
 
 	std::vector<std::shared_ptr<ProblemInterface>> problems = {
-		std::make_shared<One>()
+		//std::make_shared<Math::SumOfNaturals>(),
+		std::make_shared<Math::Gcd>()
 	};
 
 	for (auto &i : problems) {

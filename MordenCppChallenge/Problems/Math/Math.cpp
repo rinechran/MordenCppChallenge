@@ -1,12 +1,12 @@
-#include "One.h"
+#include "Math.h"
 
 
 
-One::One()
+Math::SumOfNaturals::SumOfNaturals()
 {
 }
 
-void One::run() {
+void Math::SumOfNaturals::run() {
 	std::cin >> mInput;
 
 	std::uint64_t accumulate = 0L;
@@ -21,6 +21,6 @@ void One::run() {
 }
 
 
-One::~One()
+Math::SumOfNaturals::~SumOfNaturals()
 {
 }

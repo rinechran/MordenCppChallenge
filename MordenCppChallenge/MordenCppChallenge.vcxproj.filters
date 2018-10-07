@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="Problems\ch1\One.cpp" />
     <ClCompile Include="Problems\ProblemInterface.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Problems\Math\Math.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Problems\ch1\One.h" />
     <ClInclude Include="Problems\ProblemInterface.h" />
+    <ClInclude Include="Problems\Math\Math.h" />
   </ItemGroup>
 </Project>

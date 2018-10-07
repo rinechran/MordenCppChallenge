@@ -20,11 +20,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Problems\ch1\One.cpp" />
+    <ClCompile Include="Problems\Math\Math.cpp" />
     <ClCompile Include="Problems\ProblemInterface.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Problems\ch1\One.h" />
+    <ClInclude Include="Problems\Math\Math.h" />
     <ClInclude Include="Problems\ProblemInterface.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
