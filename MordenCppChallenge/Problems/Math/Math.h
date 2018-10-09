@@ -1,6 +1,9 @@
 #pragma once
 #include <iostream>
 #include <algorithm>
+#include <functional>
+#include <numeric>
+
 #include "../ProblemInterface.h"
 
 namespace Math {
@@ -8,37 +11,36 @@ namespace Math {
 	{
 	public:
 		SumOfNaturals();
-		virtual void run() override;
+		virtual void solve() override;
+		virtual void input() override {
+			std::cin >> mInput;
+		}
 		~SumOfNaturals();
+		
 	private:
 		int mInput;
 
 	};
 	class Gcd : public ProblemInterface {
 	public:
-		Gcd() {
-			
-		}
-		virtual void run() override {
-			int num[2];
-			std::cin >> num[0] >> num[1] ;
-			
-			if (num[0] * num[1] == 0) {
-				std::cout << "zero value" << std::endl;
-				return;
-			}
-
-			std::sort(std::begin(num), std::end(num), [](
-				int &num1, int num2) {return num1 > num2; });
-			
-			while (num[1]) {
-				int temp = num[1];
-				num[1] = num[0] % num[1];
-				num[0] = temp;
-			}
-			std::cout << num[0] << std::endl;
-
-		}
+		Gcd();
+		virtual void solve() override;
+		virtual void input() override;
 		~Gcd() = default;
+	private:
+		int num[2];
+
+	};
+	class Lcm : public ProblemInterface {
+	public:
+		Lcm();
+		~Lcm() = default;
+		virtual void solve();
+		virtual void input();
+		int gcd(int n, int m);
+
+	private:
+		
+		std::vector<int> mInput;
 	};
 }
