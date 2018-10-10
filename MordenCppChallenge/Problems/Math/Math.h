@@ -12,9 +12,7 @@ namespace Math {
 	public:
 		SumOfNaturals();
 		virtual void solve() override;
-		virtual void input() override {
-			std::cin >> mInput;
-		}
+		virtual void input() override;
 		~SumOfNaturals();
 		
 	private:
@@ -42,5 +40,28 @@ namespace Math {
 	private:
 		
 		std::vector<int> mInput;
+	};
+	class PrimeNumber : public ProblemInterface{
+	public:
+		PrimeNumber() = default;
+		virtual void input() override;
+		virtual void solve() override;
+		bool isPrime(int n);
+
+		~PrimeNumber() = default;
+		int mNum;
+		
+	
+	};
+
+	class Sexyprime  : public ProblemInterface{
+	public:
+		Sexyprime() = default;
+		~Sexyprime() = default;
+		virtual void input() override;
+		virtual void solve() override;
+		bool isPrime(int n);
+		int mNum;
+
 	};
 }

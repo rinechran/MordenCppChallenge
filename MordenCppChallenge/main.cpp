@@ -9,10 +9,12 @@
 
 int main() {
 
+
 	std::vector<std::shared_ptr<ProblemInterface>> problems = {
 		//std::make_shared<Math::SumOfNaturals>(),
 		//std::make_shared<Math::Gcd>()
-		std::make_shared<Math::Lcm>()
+		//std::make_shared<Math::Lcm>()
+		//std::make_shared<Math::PrimeNumber>()
 	};
 
 	for (auto &i : problems) {
