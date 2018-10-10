@@ -145,7 +145,15 @@ void Math::Sexyprime::input()
 }
 
 void Math::Sexyprime::solve()
-{
+{	
+	//11 5
+	if (mNum<=6) return;
+	for (int i = 5; i <= mNum-6; ++i) {
+		if (isPrime(i) && isPrime(i + 6)) {
+			std::cout << i << " " << i + 6 << std::endl;
+		}
+
+	}
 }
 
 bool Math::Sexyprime::isPrime(int n)
