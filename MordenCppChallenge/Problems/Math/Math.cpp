@@ -169,3 +169,45 @@ bool Math::Sexyprime::isPrime(int n)
 
 	return true;
 }
+
+void Math::AbundantNumbers::solve()
+{
+	std::vector<int> number(mInputVal);
+	std::fill(number.begin(), number.end(), SOLUTION::NOT_FIND);
+
+	/*
+	for (int i = mNumber; mNumber > 0; --i) {
+		if (number[i] == SOLUTION::NOT_FIND) {
+			//여기서 자기보다 작은 약수또한 계산
+
+		}
+	}
+
+	//print solve
+	for (auto &it : number) {
+		if (it != SOLUTION::NOT_FIND) {
+		}
+	}
+	*/
+	std::cout << DivisorSum(mInputVal);
+
+}
+
+void Math::AbundantNumbers::input()
+{
+	std::cin >> mInputVal;
+}
+//20 10 5 1
+int Math::AbundantNumbers::DivisorSum(int n)
+{
+
+	int temp = 0;
+	int sqrtVal = n / 2;
+	int sum = n;
+	for (int i = sqrtVal; i > 0; --i) {
+		if (n%i == 0)
+			sum += i;
+	}
+
+	return sum;
+}

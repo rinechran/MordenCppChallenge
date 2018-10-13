@@ -64,4 +64,21 @@ namespace Math {
 		int mNum;
 
 	};
+
+	class AbundantNumbers : public ProblemInterface {
+	public:
+
+		enum SOLUTION {
+			NOT_FIND = -1
+		};
+
+		AbundantNumbers() = default;
+		~AbundantNumbers() = default;
+		virtual void solve();
+		virtual void input();
+		int DivisorSum(int);
+
+	private:
+		int mInputVal;
+	};
 }
