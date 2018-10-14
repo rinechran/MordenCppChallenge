@@ -122,7 +122,7 @@ void Math::PrimeNumber::solve() {
 	std::cout << max << std::endl;;
 
 
-	
+
 }
 
 bool Math::PrimeNumber::isPrime(int n)
@@ -170,26 +170,26 @@ bool Math::Sexyprime::isPrime(int n)
 	return true;
 }
 
+
+
 void Math::AbundantNumbers::solve()
 {
-	std::vector<int> number(mInputVal);
+	std::vector<int> number(mInputVal+1);
 	std::fill(number.begin(), number.end(), SOLUTION::NOT_FIND);
 
-	/*
-	for (int i = mNumber; mNumber > 0; --i) {
-		if (number[i] == SOLUTION::NOT_FIND) {
-			//여기서 자기보다 작은 약수또한 계산
+	//원래 큰수부터 작은수까지가면서 2나누면서 
+	//그 아래의 있는 약수도 구해 판별할려고했지만 귀잖아서 안함
 
-		}
+	for (int i = 2; i < number.size(); ++i) {
+		if (DivisorSum(i) > i)
+			number[i] = i;
 	}
 
 	//print solve
 	for (auto &it : number) {
-		if (it != SOLUTION::NOT_FIND) {
-		}
+		if (it != SOLUTION::NOT_FIND) std::cout << it << std::endl;
 	}
-	*/
-	std::cout << DivisorSum(mInputVal);
+	
 
 }
 
@@ -197,13 +197,12 @@ void Math::AbundantNumbers::input()
 {
 	std::cin >> mInputVal;
 }
-//20 10 5 1
 int Math::AbundantNumbers::DivisorSum(int n)
 {
 
 	int temp = 0;
 	int sqrtVal = n / 2;
-	int sum = n;
+	int sum = 0;
 	for (int i = sqrtVal; i > 0; --i) {
 		if (n%i == 0)
 			sum += i;

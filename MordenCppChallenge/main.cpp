@@ -15,7 +15,8 @@ int main() {
 		//std::make_shared<Math::Gcd>()
 		//std::make_shared<Math::Lcm>()
 		//std::make_shared<Math::PrimeNumber>()
-		std::make_shared<Math::Sexyprime>()
+		//std::make_shared<Math::Sexyprime>()
+		std::make_shared<Math::AbundantNumbers>()
 	};
 
 	for (auto &i : problems) {
