@@ -81,4 +81,20 @@ namespace Math {
 	private:
 		int mInputVal;
 	};
+
+	class AmicableNumbers : public AbundantNumbers {
+	public:
+		AmicableNumbers() = default;
+		~AmicableNumbers() = default;
+
+		// Inherited via ProblemInterface
+		virtual void solve() override;
+	private:
+		int mInputVal;
+	};
+	class ArmstrongNumbers : public ProblemInterface {
+		// Inherited via ProblemInterface
+		virtual void input() override;
+		virtual void solve() override;
+	};
 }

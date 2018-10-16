@@ -106,7 +106,6 @@ void Math::PrimeNumber::solve() {
 
 	int max = 0;
 	for (int i = 2; i <= mNum; ++i) {
-		if (n[i] == 0) continue;
 
 		if (isPrime(i) == true) {
 			max = i;
@@ -209,4 +208,24 @@ int Math::AbundantNumbers::DivisorSum(int n)
 	}
 
 	return sum;
+}
+
+
+void Math::AmicableNumbers::solve()
+{
+	for (int i = 1; i <=mInputVal; ++i) {
+		int firstDivisorSum = this->DivisorSum(i);
+		
+
+	}
+	
+}
+
+
+void Math::ArmstrongNumbers::input()
+{
+}
+
+void Math::ArmstrongNumbers::solve()
+{
 }
