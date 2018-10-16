@@ -222,7 +222,7 @@ void Math::AmicableNumbers::solve()
 	}
 
 	
-	for (int i = 220; i <= mInputVal; ++i) {
+	for (int i = 1; i <= mInputVal; ++i) {
 		int val = divierSumArr[i]-i;
 		if (val >= mInputVal)
 			continue;
