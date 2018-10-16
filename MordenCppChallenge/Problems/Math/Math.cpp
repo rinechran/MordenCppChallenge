@@ -239,11 +239,42 @@ void Math::AmicableNumbers::input()
 }
 
 
+Math::ArmstrongNumbers::ArmstrongNumbers() : mMin(100), mMax(999) {}
+
 void Math::ArmstrongNumbers::input()
 {
+	for (int i = 0; i < sizeof(arrVal)/sizeof(int); ++i) {
+		arrVal[i] = i * i *i;
+	}
 }
 
 void Math::ArmstrongNumbers::solve()
 {
+	std::vector<int> NarcissisticArr(1000);
+
+	std::fill(NarcissisticArr.begin(), NarcissisticArr.end(), SOLUTION::NOT_FIND);
+	for (int i = mMin; i <= mMax; ++i) {
+		if (NarcissisticArr[i] == SOLUTION::NOT_FIND) {
 	
+			int first = i / 100;
+			int mid = (i-first*100) / 10;
+			int last = i - (first * 100 + mid * 10);
+			std::cout << arrVal[first] + arrVal[mid] + arrVal[last] << std::endl;
+			
+		}
+	}
+
 }
+// 1 2 3
+//
+void Math::ArmstrongNumbers::recuresive(std::vector<int>& arr, int(&arrVal)[3], int deep)
+{
+	if (deep <= -1)
+		return;
+
+	for (int i : arrVal) {
+
+	}
+
+}
+

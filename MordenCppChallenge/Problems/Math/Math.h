@@ -94,8 +94,19 @@ namespace Math {
 		int mInputVal;
 	};
 	class ArmstrongNumbers : public ProblemInterface {
+
+		enum SOLUTION {
+			NOT_FIND = -1
+		};
+	public:
+
+		ArmstrongNumbers();
 		// Inherited via ProblemInterface
 		virtual void input() override;
 		virtual void solve() override;
+		void recuresive(std::vector<int>& arr,int (&arrVal)[3],int deep);
+		int arrVal[10];
+		int mMin;
+		int mMax;
 	};
 }

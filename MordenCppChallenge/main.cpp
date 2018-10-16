@@ -17,7 +17,8 @@ int main() {
 		//std::make_shared<Math::PrimeNumber>()
 		//std::make_shared<Math::Sexyprime>()
 		//std::make_shared<Math::AbundantNumbers>()
-		std::make_shared<Math::AmicableNumbers>()
+		//std::make_shared<Math::AmicableNumbers>()
+		//std::make_shared<Math::ArmstrongNumbers>()
 	};
 
 	for (auto &i : problems) {
