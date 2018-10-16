@@ -89,6 +89,7 @@ namespace Math {
 
 		// Inherited via ProblemInterface
 		virtual void solve() override;
+		virtual void input()override;
 	private:
 		int mInputVal;
 	};

@@ -213,12 +213,29 @@ int Math::AbundantNumbers::DivisorSum(int n)
 
 void Math::AmicableNumbers::solve()
 {
+	std::vector<uint32_t> divierSumArr(mInputVal*100);
+	std::fill(divierSumArr.begin(), divierSumArr.end(), 0);
 	for (int i = 1; i <=mInputVal; ++i) {
-		int firstDivisorSum = this->DivisorSum(i);
+		for (int j = 1; j <= mInputVal/i; ++j) {
+			divierSumArr[i*j] += j;
+		}
+	}
+
+	
+	for (int i = 220; i <= mInputVal; ++i) {
+		int val = divierSumArr[i]-i;
+		if (val >= mInputVal)
+			continue;
 		
+		if (i == (divierSumArr[val]-val))
+			std::cout << i <<"  "<< val << std::endl;
 
 	}
-	
+}
+
+void Math::AmicableNumbers::input()
+{
+	this->mInputVal = 1000000;
 }
 
 
@@ -228,4 +245,5 @@ void Math::ArmstrongNumbers::input()
 
 void Math::ArmstrongNumbers::solve()
 {
+	
 }
