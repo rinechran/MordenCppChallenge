@@ -3,6 +3,7 @@
 #include <algorithm>
 #include <functional>
 #include <numeric>
+#include <bitset>
 
 #include "../ProblemInterface.h"
 
@@ -80,5 +81,51 @@ namespace Math {
 
 	private:
 		int mInputVal;
+	};
+
+	class AmicableNumbers : public AbundantNumbers {
+	public:
+		AmicableNumbers() = default;
+		~AmicableNumbers() = default;
+
+		// Inherited via ProblemInterface
+		virtual void solve() override;
+		virtual void input()override;
+	private:
+		int mInputVal;
+	};
+	class ArmstrongNumbers : public ProblemInterface {
+
+		enum SOLUTION {
+			NOT_FIND = -1
+		};
+	public:
+
+		ArmstrongNumbers();
+		// Inherited via ProblemInterface
+		virtual void input() override;
+		virtual void solve() override;
+		void recuresive(std::vector<int>& arr,int (&arrVal)[3],int deep);
+		int arrVal[10];
+		int mMin;
+		int mMax;
+	};
+	class PrimeFactorsNumber : public ProblemInterface {
+		// Inherited via ProblemInterface
+	public:
+		virtual void input() override;
+		virtual void solve() override;
+		bool isPrime(int);
+	private:
+		int mNum;
+	};
+	class GrayCode : public ProblemInterface {
+	public:
+		// Inherited via ProblemInterface
+		virtual void input() override;
+		virtual void solve() override;
+	private:
+		uint32_t mVal;
+
 	};
 }

@@ -15,7 +15,12 @@ int main() {
 		//std::make_shared<Math::Gcd>()
 		//std::make_shared<Math::Lcm>()
 		//std::make_shared<Math::PrimeNumber>()
-		std::make_shared<Math::Sexyprime>()
+		//std::make_shared<Math::Sexyprime>()
+		//std::make_shared<Math::AbundantNumbers>()
+		//std::make_shared<Math::AmicableNumbers>()
+		//std::make_shared<Math::ArmstrongNumbers>()
+		//std::make_shared<Math::PrimeFactorsNumber>()
+		std::make_shared<Math::GrayCode>()
 	};
 
 	for (auto &i : problems) {
@@ -23,4 +28,5 @@ int main() {
 		i->solve();
 	}
 }
+	
 	

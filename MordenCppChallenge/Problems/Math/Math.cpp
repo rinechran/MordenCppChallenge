@@ -106,7 +106,6 @@ void Math::PrimeNumber::solve() {
 
 	int max = 0;
 	for (int i = 2; i <= mNum; ++i) {
-		if (n[i] == 0) continue;
 
 		if (isPrime(i) == true) {
 			max = i;
@@ -122,7 +121,7 @@ void Math::PrimeNumber::solve() {
 	std::cout << max << std::endl;;
 
 
-	
+
 }
 
 bool Math::PrimeNumber::isPrime(int n)
@@ -170,26 +169,26 @@ bool Math::Sexyprime::isPrime(int n)
 	return true;
 }
 
+
+
 void Math::AbundantNumbers::solve()
 {
-	std::vector<int> number(mInputVal);
+	std::vector<int> number(mInputVal+1);
 	std::fill(number.begin(), number.end(), SOLUTION::NOT_FIND);
 
-	/*
-	for (int i = mNumber; mNumber > 0; --i) {
-		if (number[i] == SOLUTION::NOT_FIND) {
-			//여기서 자기보다 작은 약수또한 계산
+	//원래 큰수부터 작은수까지가면서 2나누면서 
+	//그 아래의 있는 약수도 구해 판별할려고했지만 귀잖아서 안함
 
-		}
+	for (int i = 2; i < number.size(); ++i) {
+		if (DivisorSum(i) > i)
+			number[i] = i;
 	}
 
 	//print solve
 	for (auto &it : number) {
-		if (it != SOLUTION::NOT_FIND) {
-		}
+		if (it != SOLUTION::NOT_FIND) std::cout << it << std::endl;
 	}
-	*/
-	std::cout << DivisorSum(mInputVal);
+	
 
 }
 
@@ -197,17 +196,134 @@ void Math::AbundantNumbers::input()
 {
 	std::cin >> mInputVal;
 }
-//20 10 5 1
 int Math::AbundantNumbers::DivisorSum(int n)
 {
 
 	int temp = 0;
 	int sqrtVal = n / 2;
-	int sum = n;
+	int sum = 0;
 	for (int i = sqrtVal; i > 0; --i) {
 		if (n%i == 0)
 			sum += i;
 	}
 
 	return sum;
+}
+
+
+void Math::AmicableNumbers::solve()
+{
+	std::vector<uint32_t> divierSumArr(mInputVal*100);
+	std::fill(divierSumArr.begin(), divierSumArr.end(), 0);
+	for (int i = 1; i <=mInputVal; ++i) {
+		for (int j = 1; j <= mInputVal/i; ++j) {
+			divierSumArr[i*j] += j;
+		}
+	}
+
+	
+	for (int i = 1; i <= mInputVal; ++i) {
+		int val = divierSumArr[i]-i;
+		if (val >= mInputVal)
+			continue;
+		
+		if (i == (divierSumArr[val]-val))
+			std::cout << i <<"  "<< val << std::endl;
+
+	}
+}
+
+void Math::AmicableNumbers::input()
+{
+	this->mInputVal = 1000000;
+}
+
+
+Math::ArmstrongNumbers::ArmstrongNumbers() : mMin(100), mMax(999) {}
+
+void Math::ArmstrongNumbers::input()
+{
+	for (int i = 0; i < sizeof(arrVal)/sizeof(int); ++i) {
+		arrVal[i] = i * i *i;
+	}
+}
+
+void Math::ArmstrongNumbers::solve()
+{
+	std::vector<int> NarcissisticArr(1000);
+
+	std::fill(NarcissisticArr.begin(), NarcissisticArr.end(), SOLUTION::NOT_FIND);
+	for (int i = mMin; i <= mMax; ++i) {
+		if (NarcissisticArr[i] == SOLUTION::NOT_FIND) {
+	
+			int first = i / 100;
+			int mid = (i-first*100) / 10;
+			int last = i - (first * 100 + mid * 10);
+			std::cout << arrVal[first] + arrVal[mid] + arrVal[last] << std::endl;
+			
+		}
+	}
+
+}
+// 1 2 3
+//
+void Math::ArmstrongNumbers::recuresive(std::vector<int>& arr, int(&arrVal)[3], int deep)
+{
+	if (deep <= -1)
+		return;
+
+	for (int i : arrVal) {
+
+	}
+
+}
+
+void Math::PrimeFactorsNumber::input()
+{
+	std::cin >> mNum;
+}
+
+void Math::PrimeFactorsNumber::solve()
+{
+
+	for (int i = 2; mNum != 1; ++i) {
+		while(mNum % i==0 ) {
+			mNum /= i;
+			std::cout << i << std::endl;
+		}
+
+	}
+}
+
+bool Math::PrimeFactorsNumber::isPrime(int n )
+{
+	if (n == 1)
+		return false;
+	if (!(n & 1))
+		return n == 2;
+
+	for (int i = 2; i <= std::sqrt(n); ++i) {
+		if (n%i == 0)return false;
+	}
+
+	return true;
+}
+
+void Math::GrayCode::input()
+{
+	//2 4 8 16 32
+	mVal = 32;
+}
+
+void Math::GrayCode::solve()
+{
+	std::bitset<5> val;
+	for (int i = 0; i < mVal; ++i) {
+		int temp = i;
+		uint32_t firstMask = i&16;
+
+		val = (firstMask |i ^ (temp>>1));
+		std::cout << val << std::endl;
+
+	}
 }
