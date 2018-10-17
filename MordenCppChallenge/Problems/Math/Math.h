@@ -3,6 +3,7 @@
 #include <algorithm>
 #include <functional>
 #include <numeric>
+#include <bitset>
 
 #include "../ProblemInterface.h"
 
@@ -117,5 +118,14 @@ namespace Math {
 		bool isPrime(int);
 	private:
 		int mNum;
+	};
+	class GrayCode : public ProblemInterface {
+	public:
+		// Inherited via ProblemInterface
+		virtual void input() override;
+		virtual void solve() override;
+	private:
+		uint32_t mVal;
+
 	};
 }

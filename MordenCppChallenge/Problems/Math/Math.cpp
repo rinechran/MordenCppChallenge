@@ -286,15 +286,12 @@ void Math::PrimeFactorsNumber::input()
 void Math::PrimeFactorsNumber::solve()
 {
 
-	int i = 2;
-	while (mNum!=1) {
-		if (mNum % i==0 ) {
+	for (int i = 2; mNum != 1; ++i) {
+		while(mNum % i==0 ) {
 			mNum /= i;
 			std::cout << i << std::endl;
 		}
-		else{
-			++i;
-		}
+
 	}
 }
 
@@ -310,4 +307,23 @@ bool Math::PrimeFactorsNumber::isPrime(int n )
 	}
 
 	return true;
+}
+
+void Math::GrayCode::input()
+{
+	//2 4 8 16 32
+	mVal = 32;
+}
+
+void Math::GrayCode::solve()
+{
+	std::bitset<5> val;
+	for (int i = 0; i < mVal; ++i) {
+		int temp = i;
+		uint32_t firstMask = i&16;
+
+		val = (firstMask |i ^ (temp>>1));
+		std::cout << val << std::endl;
+
+	}
 }

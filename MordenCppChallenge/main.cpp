@@ -19,7 +19,8 @@ int main() {
 		//std::make_shared<Math::AbundantNumbers>()
 		//std::make_shared<Math::AmicableNumbers>()
 		//std::make_shared<Math::ArmstrongNumbers>()
-		std::make_shared<Math::PrimeFactorsNumber>()
+		//std::make_shared<Math::PrimeFactorsNumber>()
+		std::make_shared<Math::GrayCode>()
 	};
 
 	for (auto &i : problems) {
