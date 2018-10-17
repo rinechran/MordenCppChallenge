@@ -278,3 +278,36 @@ void Math::ArmstrongNumbers::recuresive(std::vector<int>& arr, int(&arrVal)[3], 
 
 }
 
+void Math::PrimeFactorsNumber::input()
+{
+	std::cin >> mNum;
+}
+
+void Math::PrimeFactorsNumber::solve()
+{
+
+	int i = 2;
+	while (mNum!=1) {
+		if (mNum % i==0 ) {
+			mNum /= i;
+			std::cout << i << std::endl;
+		}
+		else{
+			++i;
+		}
+	}
+}
+
+bool Math::PrimeFactorsNumber::isPrime(int n )
+{
+	if (n == 1)
+		return false;
+	if (!(n & 1))
+		return n == 2;
+
+	for (int i = 2; i <= std::sqrt(n); ++i) {
+		if (n%i == 0)return false;
+	}
+
+	return true;
+}

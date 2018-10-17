@@ -109,4 +109,13 @@ namespace Math {
 		int mMin;
 		int mMax;
 	};
+	class PrimeFactorsNumber : public ProblemInterface {
+		// Inherited via ProblemInterface
+	public:
+		virtual void input() override;
+		virtual void solve() override;
+		bool isPrime(int);
+	private:
+		int mNum;
+	};
 }
