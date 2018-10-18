@@ -4,6 +4,7 @@
 #include <functional>
 #include <numeric>
 #include <bitset>
+#include <map>
 
 #include "../ProblemInterface.h"
 
@@ -128,4 +129,21 @@ namespace Math {
 		uint32_t mVal;
 
 	};
+	class ConvertingNumerical : public ProblemInterface {
+		// Inherited via ProblemInterface
+		virtual void input() override;
+		virtual void solve() override;
+
+		static std::map<int, unsigned char> sRumeNumtoChar;
+		int mVal;
+	};
+	//귀잖으니 캐시따위 필요없다...
+	class LargestCollatz : public ProblemInterface {
+		// Inherited via ProblemInterface
+		virtual void input() override;
+		virtual void solve() override;
+		int mMaxVal;
+	};
+
 }
+
