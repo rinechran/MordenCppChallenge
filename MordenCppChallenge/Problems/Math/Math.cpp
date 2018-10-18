@@ -318,12 +318,35 @@ void Math::GrayCode::input()
 void Math::GrayCode::solve()
 {
 	std::bitset<5> val;
-	for (int i = 0; i < mVal; ++i) {
+	for (uint32_t i = 0; i < mVal; ++i) {
 		int temp = i;
 		uint32_t firstMask = i&16;
 
 		val = (firstMask |i ^ (temp>>1));
 		std::cout << val << std::endl;
 
+	}
+}
+std::map<int, unsigned char > Math::ConvertingNumerical::sRumeNumtoChar = {
+	{1,'I'},
+	{5,'V'},
+	{10,'X'},
+	{50,'L'},
+	{100,'C'},
+	{500,'D'},
+	{1000,'M'}
+};
+void Math::ConvertingNumerical::input()
+{
+	std::cin >> mVal;
+}
+
+void Math::ConvertingNumerical::solve()
+{
+	for (auto i = sRumeNumtoChar.rbegin(); i != sRumeNumtoChar.rend(); ++i) {
+		
+		int result = mVal / i->first;
+		mVal %= i->first;
+		for(int j=0;j<result;++j) std::cout << i->second;
 	}
 }
