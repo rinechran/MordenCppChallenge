@@ -21,7 +21,8 @@ int main() {
 		//std::make_shared<Math::ArmstrongNumbers>()
 		//std::make_shared<Math::PrimeFactorsNumber>()
 		//std::make_shared<Math::GrayCode>()
-		std::make_shared<Math::ConvertingNumerical>()
+		//std::make_shared<Math::ConvertingNumerical>()
+		std::make_shared<Math::LargestCollatz>()
 	};
 
 	for (auto &i : problems) {

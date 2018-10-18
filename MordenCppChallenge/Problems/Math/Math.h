@@ -137,6 +137,13 @@ namespace Math {
 		static std::map<int, unsigned char> sRumeNumtoChar;
 		int mVal;
 	};
+	//귀잖으니 캐시따위 필요없다...
+	class LargestCollatz : public ProblemInterface {
+		// Inherited via ProblemInterface
+		virtual void input() override;
+		virtual void solve() override;
+		int mMaxVal;
+	};
 
 }
 

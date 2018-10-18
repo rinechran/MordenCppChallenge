@@ -350,3 +350,27 @@ void Math::ConvertingNumerical::solve()
 		for(int j=0;j<result;++j) std::cout << i->second;
 	}
 }
+
+void Math::LargestCollatz::input()
+{
+	mMaxVal = 1000000;
+}
+
+void Math::LargestCollatz::solve()
+{
+
+	int max = 0;
+	for (int i = mMaxVal; i > 0; --i) {
+		int count = 0;
+		while (i != 1) {
+			if (i & 2)i /= 2;
+			else i = i * 3 + 1;
+			count++;
+		}
+		if (max <= count)
+			max = count;
+	}
+
+	std::cout << max;
+	
+}
